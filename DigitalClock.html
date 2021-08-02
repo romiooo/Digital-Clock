@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Monoton&family=Open+Sans&family=Titan+One&display=swap" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Lobster&family=Monoton&family=Open+Sans&family=Titan+One&family=Wallpoet&display=swap" 			rel="stylesheet">
+
+    <style>
+	body{background-image: linear-gradient(to bottom, rgba(245, 246, 252, 0.50), rgba(117, 19, 93, 0.50)),url('https://images.unsplash.com/photo-1546525506-	495a7647977b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDR8fHRpbWV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');background-repeat:no-repeat;background-size:cover;}
+	
+	.container{display:flex;flex-direction:column;justify-content:center;align-items:center;height:100vh;}
+  
+	.heading{font-size:80px;font-family: 'Lobster', cursive;
+			font-family: 'Monoton', cursive;
+			font-family: 'Open Sans', sans-serif;
+			font-family: 'Titan One', cursive;}
+
+	.parent{height:200px;width:500px;padding:20px;background:black;border:none;border-radius:30px;display:flex;flex-direction:column;justify-content:center;align-			items:center;box-shadow:0px 0px 30px white;}
+
+	.clock{display:flex;justify-content:center;align-items:center;align-items:baseline;}
+
+	#child1,#child2,#child3{height:120px;width:200px;border-radius:10%;text-align:center;font-size:100px;align-items:baseline;
+				font-family:'Wallpoet',cursive;text-shadow:0 0 20px;
+				color: #fff;text-shadow:0 0 7px #fff,0 0 10px #fff,0 0 21px #fff,0 0 42px #bc13fe,0 0 82px #bc13fe,0 0 92px #bc13fe,0 0 102px #bc13fe,
+    				0 0 151px #bc13fe;}
+
+	.time{display:flex;justify-content:center;align-items:center;justify-content:space-around;}
+	.visual{width:150px;height20px;color:white;text-align:center;
+		font-family:arial;padding-top:10px;font-family: 'DotGothic16', sans-serif;
+		font-family: 'Lobster', cursive;
+		font-family: 'Monoton', cursive;
+		font-family: 'Open Sans', sans-serif;
+		font-family: 'Titan One', cursive;
+		font-family: 'Wallpoet', cursive;}
+
+	.colon{color:white;font-size:100px;}
+    </style>
+  </head>
+
+  <body onload="startTime()">
+	<div class="container">
+                <div class="heading">Count Down Clock</div>
+		<div class="parent">
+			<div class="clock">
+				<div id="child1"></div>
+				<div class="colon">:</div>
+				<div id="child2"></div>
+				<div class="colon">:</div>
+				<div id="child3"></div>
+			</div>
+	
+			<div class="time">
+				<div class="visual">Hour</div>
+				<div class="visual">Minute</div>
+				<div class="visual">Second</div>
+			</div>
+		<div>
+	<div>
+	<script>
+function startTime() {
+  const today = new Date();
+  let h = today.getHours();
+  let m = today.getMinutes();
+  let s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('child1').innerHTML=h;
+document.getElementById('child2').innerHTML=m;
+document.getElementById('child3').innerHTML=s;
+  setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+
+  </body>
+</html>
